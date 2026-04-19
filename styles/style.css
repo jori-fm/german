@@ -1,4 +1,9 @@
-/*styles for the body*/
+/*Box-sizing for all elements*/
+* {
+	box-sizing: border-box;
+}
+
+/*Styles for the body*/
 body {
 	background-color: #FCEBB6;
 	color: #221811;
@@ -7,33 +12,52 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
-	/*styles for the header*/
+	
 }
 /*styles for the wrapper*/
 #wrapper { 
-	background-color: #FEFAEB;
+	background-color: #231814;
 	margin-left: auto;
 	margin-right: auto;
 	width: 80%;
 	min-width: 900px;
 	max-width: 1280px;
-	box-shadow: 3px 3px 3px #676767;
+	box-shadow: 6px 6px 6px #333;
+	padding: 0;
 }
+/*styles for the header*/
 header {
 	background-color: #D2B48C;
-	color: #8C3826;
-	text-align: center;
+	color: #231814;
 	padding-top: 5px;
-	padding-bottom: 5px
+	padding-bottom: 5px;
+	background-image: url(../img/coffeelogo.jpg);
+	background-repeat: no-repeat;
+	padding-left: 240px;
+} 
+header a {text-decoration: none;}
+header a:link {color: #231814;}
+header a:visited {color: #231814;}
+header a:hover {color: #FEF6C2;}
+
+/* Styles for the headers*/
+main h2, h3, h4, p, div, ul, dl {
+	padding-left: 3em;
+	padding-right: 2em;
 }
+
 /*styles for headings*/
-h1 { line-height: 200%; }
+h1 { font-size: 3em; }
 h2 { color: #8C3826; } 
+h3, dt {color: #8C3826; }
 h4 {
 	background-color: #D2B48C;
 	font-size: 1.2em;
 	padding-left: .5em;
-	padding-bottom: .25em;
+	padding-bottom: 0;
+	text-transform: uppercase;
+	border-bottom: 1px solid #221811;
+	clear: left;
 }
 /*styles for the nav*/
 nav {
@@ -41,30 +65,82 @@ nav {
 	text-align: center;
 	font-size: 1.5em;
 	padding-top: 5px;
-	padding-bottom: 5px 
+	padding-bottom: 5px;
+	float: left;
+	width: 200px; 
 }
 nav a { text-decoration: none; }
+
+/*Psuedo class for nav links*/
+nav a:link {
+	color: #FeF6C2;
+}
+
+nav a:visited {
+	color: #D2B48C;
+}
+
+nav a:hover {
+	color: #CC9933;
+}
+
+nav ul {
+	list-style-type: none;
+	padding-left: 0;
+}
 /* Styles for the main*/
 main {
+	padding-left: 0;
+	padding-bottom: 2em; 
+	padding-right: 0;
 	display: block;
-	padding: 0 2em 2em 2em;
+	margin-left: 200px;
+	padding-top: 0;
+	background-color: #FEF6C2;
+	overflow: auto;
 }
 /*Styles for classes*/
 .details {
 	padding-left: 20%;
 	padding-right: 20%;
+	overflow: auto;
+}
+
+/*Class for floating images*/
+.floatleft {
+	float: left;
+	padding-right: 2em;
+	padding-bottom: 2em;
+}
+/*Class for one third*/
+.onethird {
+	float: left;
+	width: 33%;
 }
 /*Styles for images*/
 img {
 	padding-left: 10px;
 	padding-right: 10px;
 }
-/*Styles for id*/
+/*Styles for home hero*/
 #homehero {
 	height: 300px;
 	background-image: url(../img/hero.jpg);
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100% 100%;
+}
+#heromugs {
+	background-image: url(../img/heromugs.jpg);
+	height: 300px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+#heroguitar {
+	background-image: url(../img/heroguitar.jpg);
+	height: 300px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 }
 /*styles for the footer*/
 footer {
@@ -73,5 +149,5 @@ footer {
 	font-style: italic;
 	text-align: center;
 	padding-bottom: 1em;
-	border-top: 2px solid #8C3826
+	border-top: 2px solid #8C3826;
 }
