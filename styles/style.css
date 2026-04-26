@@ -8,21 +8,11 @@ body {
 	background-color: #FCEBB6;
 	color: #221811;
 	font-family: Tahoma, Arial, sans-serif;
-	background-image: url(../img/fadedroad50.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-	
+	margin: 0;
 }
 /*styles for the wrapper*/
 #wrapper { 
 	background-color: #231814;
-	margin-left: auto;
-	margin-right: auto;
-	width: 80%;
-	min-width: 900px;
-	max-width: 1280px;
-	box-shadow: 6px 6px 6px #333;
 	padding: 0;
 }
 /*styles for the header*/
@@ -31,9 +21,9 @@ header {
 	color: #231814;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	background-image: url(../img/coffeelogo.jpg);
+	background-image: url(../img/cup.jpg);
 	background-repeat: no-repeat;
-	padding-left: 240px;
+	padding-left: 105px;
 } 
 header a {text-decoration: none;}
 header a:link {color: #231814;}
@@ -41,13 +31,10 @@ header a:visited {color: #231814;}
 header a:hover {color: #FEF6C2;}
 
 /* Styles for the headers*/
-main h2, h3, h4, p, div, ul, dl {
-	padding-left: 3em;
-	padding-right: 2em;
-}
+
 
 /*styles for headings*/
-h1 { font-size: 3em; }
+h1 { font-size: 2em; }
 h2 { color: #8C3826; } 
 h3, dt {color: #8C3826; }
 h4 {
@@ -61,13 +48,8 @@ h4 {
 }
 /*styles for the nav*/
 nav {
-	font-weight: bold;
 	text-align: center;
-	font-size: 1.5em;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	float: left;
-	width: 200px; 
+	font-size: 1.5em
 }
 nav a { text-decoration: none; }
 
@@ -85,37 +67,37 @@ nav a:hover {
 }
 
 nav ul {
+	display: flex;
+	flex-direction: column;
+	font-size: 1.25em;
 	list-style-type: none;
-	padding-left: 0;
+	margin: 0;
+	padding: 0;
+}
+nav li {
+	border-bottom: 1px solid #FEF6C2;
+	padding: .5em 1em;
+	width: 100%;
 }
 /* Styles for the main*/
+
 main {
-	padding-left: 0;
-	padding-bottom: 2em; 
-	padding-right: 0;
-	display: block;
-	margin-left: 200px;
-	padding-top: 0;
 	background-color: #FEF6C2;
-	overflow: auto;
+	display: block;
+	padding: 0 0 2em 0;
 }
-/*Styles for classes*/
+h2, h3, h4, p, div, ul, dl {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+main ul {
+	padding-left: 2em;
+}
+/*Styles for details*/
 .details {
 	padding-left: 20%;
 	padding-right: 20%;
 	overflow: auto;
-}
-
-/*Class for floating images*/
-.floatleft {
-	float: left;
-	padding-right: 2em;
-	padding-bottom: 2em;
-}
-/*Class for one third*/
-.onethird {
-	float: left;
-	width: 33%;
 }
 /*Styles for images*/
 img {
@@ -125,22 +107,30 @@ img {
 /*Styles for home hero*/
 #homehero {
 	height: 300px;
-	background-image: url(../img/hero.jpg);
+	background-image: url(../img/road.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
 #heromugs {
-	background-image: url(../img/heromugs.jpg);
+	background-image: url(../img/threemugs.jpg);
 	height: 300px;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 }
 
 #heroguitar {
-	background-image: url(../img/heroguitar.jpg);
+	background-image: url(../img/guitar.jpg);
 	height: 300px;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
+}
+/*Styles for mobile*/
+#mobile {
+	display: inline;
+}
+/* Styles for Desktop*/
+#desktop {
+	display: none;
 }
 /*styles for the footer*/
 footer {
@@ -151,3 +141,81 @@ footer {
 	padding-bottom: 1em;
 	border-top: 2px solid #8C3826;
 }
+/*Media Query for Dekstop*/
+@media (min-width: 600px) {
+	header {
+		padding-left: 0;
+		text-align: center;
+	}
+	h1 {
+		font-size: 3em;
+	}
+	nav ul {
+		flex-flow: row nowrap; 
+		justify-content: space-around;
+	}
+	nav li {
+		border-bottom: none;
+	}
+	#homehero {
+		background-image: url(../img/hero.jpg); 
+		height: 50vh; 
+	}
+	#heromugs {
+		background-image: url(../img/heromugs.jpg); 
+	}
+	#heroguitar {
+		background-image: url(../img/heroguitar.jpg); 
+	}
+	#flow {
+		display: flex;
+		flex-direction: row;
+	}
+	#mobile {
+		display: none;
+	}
+	#desktop {
+		display: inline;
+	}
+	.details {
+		display: flex;
+		flex-direction: row;
+	}
+	h4 {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+}
+		
+/* Media Query for large Screens*/
+@media (min-width: 1024px) {
+	@supports (display: grid) {
+		header {
+			grid-area: header;
+		}
+		nav {
+			grid-area: nav;
+		}
+		main {
+			grid-area: main;
+		}
+		footer {
+			grid-area: footer;
+		}
+		#wrapper {
+			display: grid;
+			grid-template:
+			"header header"
+			"nav    main" 
+			"footer footer"
+			/ 200px;
+		}
+		nav ul {
+			flex-direction: column;
+		}
+		header {
+			background-image: url(../img/coffeelogo.jpg); 
+		}
+	}
+}
+
