@@ -167,6 +167,9 @@ form {
 input, textarea {
 	margin-bottom: .5em;
 }
+audio { display: block;
+		margin-top: 1em;
+}
 /*Media Query for Dekstop*/
 @media (min-width: 600px) {
 	header {
@@ -223,7 +226,14 @@ input, textarea {
 		display: flex;
 		gap: 1em; /* This creates space between the two buttons */
 	}
-	input[type="submit"], input[type="reset"] {
+	.form-buttons {
+		grid-column: 2 / 3; /* Places the group in the right column */
+		display: flex;      /* Aligns buttons horizontally */
+		gap: 20px;          /* Adjust this value to increase/decrease space */
+	}
+
+	input[type="submit"], 
+	input[type="reset"] {
 		width: 9em;
 	}
 	#herojobs {
